@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32630.192
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocStorage.Api", "DocStorage\DocStorage.Api.csproj", "{A2999F47-3829-46A1-8A8A-B5C4ED7B1EBD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocStorage.Model", "DocStorage.Model\DocStorage.Model.csproj", "{C8A50FB7-81CB-47B8-994A-8D348AD35AD2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocStorage.Service", "DocStorage.Service\DocStorage.Service.csproj", "{2A2B7088-3AE3-4DA9-9B17-5AD0AD830A2F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocStorage.Domain", "DocStorage.Domain\DocStorage.Domain.csproj", "{DA0A90AF-811C-4C18-9096-6A1CE5C7FD36}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocStorage.Util", "DocStorage.Util\DocStorage.Util.csproj", "{DE78E54F-786C-43D9-851A-DDF83E077C0D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocStorage.Tests", "DocStorage.Tests\DocStorage.Tests.csproj", "{1075BE9E-752F-4498-8589-FD1A57B627ED}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A2999F47-3829-46A1-8A8A-B5C4ED7B1EBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2999F47-3829-46A1-8A8A-B5C4ED7B1EBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2999F47-3829-46A1-8A8A-B5C4ED7B1EBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2999F47-3829-46A1-8A8A-B5C4ED7B1EBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8A50FB7-81CB-47B8-994A-8D348AD35AD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8A50FB7-81CB-47B8-994A-8D348AD35AD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8A50FB7-81CB-47B8-994A-8D348AD35AD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8A50FB7-81CB-47B8-994A-8D348AD35AD2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A2B7088-3AE3-4DA9-9B17-5AD0AD830A2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A2B7088-3AE3-4DA9-9B17-5AD0AD830A2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A2B7088-3AE3-4DA9-9B17-5AD0AD830A2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A2B7088-3AE3-4DA9-9B17-5AD0AD830A2F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA0A90AF-811C-4C18-9096-6A1CE5C7FD36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA0A90AF-811C-4C18-9096-6A1CE5C7FD36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA0A90AF-811C-4C18-9096-6A1CE5C7FD36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA0A90AF-811C-4C18-9096-6A1CE5C7FD36}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE78E54F-786C-43D9-851A-DDF83E077C0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE78E54F-786C-43D9-851A-DDF83E077C0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE78E54F-786C-43D9-851A-DDF83E077C0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE78E54F-786C-43D9-851A-DDF83E077C0D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1075BE9E-752F-4498-8589-FD1A57B627ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1075BE9E-752F-4498-8589-FD1A57B627ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1075BE9E-752F-4498-8589-FD1A57B627ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1075BE9E-752F-4498-8589-FD1A57B627ED}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D6BA64D3-3418-4D56-A2B5-6CC827C965BB}
+	EndGlobalSection
+EndGlobal

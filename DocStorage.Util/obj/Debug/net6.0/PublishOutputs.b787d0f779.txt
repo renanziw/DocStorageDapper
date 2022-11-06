@@ -1,0 +1,6 @@
+C:\Users\Renan\Desktop\DocStorage\DocStorage\DocStorage.Util\bin\Debug\net6.0\publish\DocStorage.Util.dll
+C:\Users\Renan\Desktop\DocStorage\DocStorage\DocStorage.Util\bin\Debug\net6.0\publish\DocStorage.Util.deps.json
+C:\Users\Renan\Desktop\DocStorage\DocStorage\DocStorage.Util\bin\Debug\net6.0\publish\DocStorage.Util.pdb
+C:\Users\Renan\Desktop\DocStorage\DocStorage\DocStorage.Util\bin\Debug\net6.0\publish\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\Renan\Desktop\DocStorage\DocStorage\DocStorage.Util\bin\Debug\net6.0\publish\Microsoft.IdentityModel.Logging.dll
+C:\Users\Renan\Desktop\DocStorage\DocStorage\DocStorage.Util\bin\Debug\net6.0\publish\Microsoft.IdentityModel.Tokens.dll

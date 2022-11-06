@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "oNFe7pTNW4SDxsR48+R5pZBVH8DQ5piEtXw8IuTMuEbikmsq0mlgoMGP/W3dpkR/QS1sKZC2ozToKP+wUx9xww==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Renan\\Desktop\\DocStorage\\DocStorage\\DocStorage.Util\\DocStorage.Util.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Renan\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
+    "C:\\Users\\Renan\\.nuget\\packages\\microsoft.identitymodel.abstractions\\6.24.0\\microsoft.identitymodel.abstractions.6.24.0.nupkg.sha512",
+    "C:\\Users\\Renan\\.nuget\\packages\\microsoft.identitymodel.logging\\6.24.0\\microsoft.identitymodel.logging.6.24.0.nupkg.sha512",
+    "C:\\Users\\Renan\\.nuget\\packages\\microsoft.identitymodel.tokens\\6.24.0\\microsoft.identitymodel.tokens.6.24.0.nupkg.sha512",
+    "C:\\Users\\Renan\\.nuget\\packages\\system.security.cryptography.cng\\4.5.0\\system.security.cryptography.cng.4.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}
