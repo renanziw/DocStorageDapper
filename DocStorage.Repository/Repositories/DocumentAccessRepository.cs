@@ -24,9 +24,9 @@ namespace DocStorage.Repository.Repositories
 	            public.user.*
             FROM 
 	            public.documentaccess
-	            left join public.document on (public.document.document_id = public.documentaccess.document_id)
-	            left join public.group on (public.group.group_id = public.documentaccess.group_id)
-	            left join public.user on (public.user.user_id = public.documentaccess.user_id)";
+	            INNER JOIN public.document  ON (public.document.document_id = public.documentaccess.document_id)
+	            LEFT JOIN public.group      ON (public.group.group_id = public.documentaccess.group_id)
+	            LEFT JOIN public.user       ON (public.user.user_id = public.documentaccess.user_id)";
 
 
         private const string SELECT_BY_ID = @"
@@ -37,9 +37,9 @@ namespace DocStorage.Repository.Repositories
 	            public.user.*
             FROM 
 	            public.documentaccess
-	            left join public.document on (public.document.document_id = public.documentaccess.document_id)
-	            left join public.group on (public.group.group_id = public.documentaccess.group_id)
-	            left join public.user on (public.user.user_id = public.documentaccess.user_id)
+	            INNER JOIN public.document  ON (public.document.document_id = public.documentaccess.document_id)
+	            LEFT JOIN public.group      ON (public.group.group_id = public.documentaccess.group_id)
+	            LEFT JOIN public.user       ON (public.user.user_id = public.documentaccess.user_id)
             WHERE 
                 public.documentaccess.document_access_id = @Id";
 
@@ -63,9 +63,9 @@ namespace DocStorage.Repository.Repositories
 	            public.user.*
             FROM 
 	            public.documentaccess
-	            left join public.document on (public.document.document_id = public.documentaccess.document_id)
-	            left join public.group on (public.group.group_id = public.documentaccess.group_id)
-	            left join public.user on (public.user.user_id = public.documentaccess.user_id) 
+	            INNER JOIN public.document  ON (public.document.document_id = public.documentaccess.document_id)
+	            LEFT JOIN public.group      ON (public.group.group_id = public.documentaccess.group_id)
+	            LEFT JOIN public.user       ON (public.user.user_id = public.documentaccess.user_id) 
             WHERE 
                 public.documentaccess.document_id = @Id";
 

@@ -17,30 +17,30 @@ namespace DocStorage.Repository.Repositories
 
         private const string SELECT_ALL = @"
             SELECT 
-	            public.usergroup.user_group_id as user_group_id,
-	            public.group.group_id as group_id,
-	            public.group.name as name,
-	            public.user.user_id as user_id,
-	            public.user.user_name as user_name,
-	            public.user.role as role
+	            public.usergroup.user_group_id  AS user_group_id,
+	            public.group.group_id           AS group_id,
+	            public.group.name               AS name,
+	            public.user.user_id             AS user_id,
+	            public.user.user_name           AS user_name,
+	            public.user.role                AS role
             FROM 
 	            public.usergroup 
-	            left join public.group on (public.usergroup.group_id = public.group.group_id)
-	            left join public.user on (public.usergroup.user_id = public.user.user_id)";
+	            INNER JOIN public.group ON (public.usergroup.group_id = public.group.group_id)
+	            INNER JOIN public.user  ON (public.usergroup.user_id = public.user.user_id)";
 
 
         private const string SELECT_BY_ID = @"
             SELECT 
-	            public.usergroup.user_group_id as user_group_id,
-	            public.group.group_id as group_id,
-	            public.group.name as name,
-	            public.user.user_id as user_id,
-	            public.user.user_name as user_name,
-	            public.user.role as role
+	            public.usergroup.user_group_id  AS user_group_id,
+	            public.group.group_id           AS group_id,
+	            public.group.name               AS name,
+	            public.user.user_id             AS user_id,
+	            public.user.user_name           AS user_name,
+	            public.user.role                AS role
             FROM 
 	            public.usergroup 
-	            left join public.group on (public.usergroup.group_id = public.group.group_id)
-	            left join public.user on (public.usergroup.user_id = public.user.user_id)
+	            INNER JOIN public.group ON (public.usergroup.group_id = public.group.group_id)
+	            INNER JOIN public.user  ON (public.usergroup.user_id = public.user.user_id)
             WHERE 
                 public.usergroup.user_group_id = @Id";
 
@@ -54,20 +54,21 @@ namespace DocStorage.Repository.Repositories
         private const string INSERT = @"
             INSERT INTO 
                 public.usergroup (user_id, group_id) 
-            VALUES (@UserId, @GroupId)";
+            VALUES 
+                (@UserId, @GroupId)";
 
         private const string SELECT_BY_USER_ID = @"
            SELECT 
-	            public.usergroup.user_group_id as user_group_id,
-	            public.group.group_id as group_id,
-	            public.group.name as name,
-	            public.user.user_id as user_id,
-	            public.user.user_name as user_name,
-	            public.user.role as role
+	            public.usergroup.user_group_id  AS user_group_id,
+	            public.group.group_id           AS group_id,
+	            public.group.name               AS name,
+	            public.user.user_id             AS user_id,
+	            public.user.user_name           AS user_name,
+	            public.user.role                AS role
             FROM 
 	            public.usergroup 
-	            left join public.group on (public.usergroup.group_id = public.group.group_id)
-	            left join public.user on (public.usergroup.user_id = public.user.user_id)
+	            INNER JOIN public.group ON (public.usergroup.group_id = public.group.group_id)
+	            INNER JOIN public.user  ON (public.usergroup.user_id = public.user.user_id)
             WHERE 
 	            public.usergroup.user_id = @Id";
 
