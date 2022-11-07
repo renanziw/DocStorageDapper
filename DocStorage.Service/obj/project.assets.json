@@ -23,6 +23,15 @@
           "lib/net6.0/BCrypt.Net-Next.dll": {}
         }
       },
+      "Dapper/2.0.123": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0/Dapper.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/Dapper.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.Cryptography.Internal/6.0.10": {
         "type": "package",
         "compile": {
@@ -317,6 +326,18 @@
           "lib/net6.0/Microsoft.IdentityModel.Tokens.dll": {}
         }
       },
+      "Npgsql/6.0.7": {
+        "type": "package",
+        "dependencies": {
+          "System.Runtime.CompilerServices.Unsafe": "6.0.0"
+        },
+        "compile": {
+          "lib/net6.0/Npgsql.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/Npgsql.dll": {}
+        }
+      },
       "System.Collections.Immutable/6.0.0": {
         "type": "package",
         "dependencies": {
@@ -416,6 +437,22 @@
           "bin/placeholder/DocStorage.Model.dll": {}
         }
       },
+      "DocStorage.Repository/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Dapper": "2.0.123",
+          "DocStorage.Domain": "1.0.0",
+          "DocStorage.Model": "1.0.0",
+          "Npgsql": "6.0.7"
+        },
+        "compile": {
+          "bin/placeholder/DocStorage.Repository.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DocStorage.Repository.dll": {}
+        }
+      },
       "DocStorage.Util/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -476,6 +513,24 @@
         "lib/netstandard2.1/BCrypt.Net-Next.dll",
         "lib/netstandard2.1/BCrypt.Net-Next.xml",
         "readme.md"
+      ]
+    },
+    "Dapper/2.0.123": {
+      "sha512": "RDFF4rBLLmbpi6pwkY7q/M6UXHRJEOerplDGE5jwEkP/JGJnBauAClYavNKJPW1yOTWRPIyfj4is3EaJxQXILQ==",
+      "type": "package",
+      "path": "dapper/2.0.123",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Dapper.png",
+        "dapper.2.0.123.nupkg.sha512",
+        "dapper.nuspec",
+        "lib/net461/Dapper.dll",
+        "lib/net461/Dapper.xml",
+        "lib/net5.0/Dapper.dll",
+        "lib/net5.0/Dapper.xml",
+        "lib/netstandard2.0/Dapper.dll",
+        "lib/netstandard2.0/Dapper.xml"
       ]
     },
     "Microsoft.AspNetCore.Cryptography.Internal/6.0.10": {
@@ -1003,6 +1058,29 @@
         "microsoft.identitymodel.tokens.nuspec"
       ]
     },
+    "Npgsql/6.0.7": {
+      "sha512": "HhD5q/VUJY++tCzc0eCrhtsxmUdP7NxNhUMOdYW6sqpC6NRlFLvUDf5JyRj0gOGkXe3Tn49toaisgvLqlzQ2JQ==",
+      "type": "package",
+      "path": "npgsql/6.0.7",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "lib/net5.0/Npgsql.dll",
+        "lib/net5.0/Npgsql.xml",
+        "lib/net6.0/Npgsql.dll",
+        "lib/net6.0/Npgsql.xml",
+        "lib/netcoreapp3.1/Npgsql.dll",
+        "lib/netcoreapp3.1/Npgsql.xml",
+        "lib/netstandard2.0/Npgsql.dll",
+        "lib/netstandard2.0/Npgsql.xml",
+        "lib/netstandard2.1/Npgsql.dll",
+        "lib/netstandard2.1/Npgsql.xml",
+        "npgsql.6.0.7.nupkg.sha512",
+        "npgsql.nuspec",
+        "postgresql.png"
+      ]
+    },
     "System.Collections.Immutable/6.0.0": {
       "sha512": "l4zZJ1WU2hqpQQHXz1rvC3etVZN+2DLmQMO79FhOTZHMn8tDRr+WU287sbomD0BETlmKDn0ygUgVy9k5xkkJdA==",
       "type": "package",
@@ -1168,6 +1246,11 @@
       "path": "../DocStorage.Model/DocStorage.Model.csproj",
       "msbuildProject": "../DocStorage.Model/DocStorage.Model.csproj"
     },
+    "DocStorage.Repository/1.0.0": {
+      "type": "project",
+      "path": "../DocStorage.Repository/DocStorage.Repository.csproj",
+      "msbuildProject": "../DocStorage.Repository/DocStorage.Repository.csproj"
+    },
     "DocStorage.Util/1.0.0": {
       "type": "project",
       "path": "../DocStorage.Util/DocStorage.Util.csproj",
@@ -1180,6 +1263,7 @@
       "BCrypt.Net-Next >= 4.0.3",
       "DocStorage.Domain >= 1.0.0",
       "DocStorage.Model >= 1.0.0",
+      "DocStorage.Repository >= 1.0.0",
       "DocStorage.Util >= 1.0.0",
       "System.IdentityModel.Tokens.Jwt >= 6.10.0"
     ]
@@ -1218,6 +1302,9 @@
             },
             "C:\\Users\\Renan\\Desktop\\DocStorage\\DocStorage\\DocStorage.Model\\DocStorage.Model.csproj": {
               "projectPath": "C:\\Users\\Renan\\Desktop\\DocStorage\\DocStorage\\DocStorage.Model\\DocStorage.Model.csproj"
+            },
+            "C:\\Users\\Renan\\Desktop\\DocStorage\\DocStorage\\DocStorage.Repository\\DocStorage.Repository.csproj": {
+              "projectPath": "C:\\Users\\Renan\\Desktop\\DocStorage\\DocStorage\\DocStorage.Repository\\DocStorage.Repository.csproj"
             },
             "C:\\Users\\Renan\\Desktop\\DocStorage\\DocStorage\\DocStorage.Util\\DocStorage.Util.csproj": {
               "projectPath": "C:\\Users\\Renan\\Desktop\\DocStorage\\DocStorage\\DocStorage.Util\\DocStorage.Util.csproj"

@@ -9,11 +9,16 @@ namespace DocStorage.Util
     public enum ErrorTypes
     {
         UserNotFound,
+        CouldNotAddUser,
         UserOrPasswordIncorrect,
         GroupNotFound,
+        CouldNotAddGroup,
         RelationBetweenUserAndGroupNotFound,
+        CouldNotAddUserToGroup,
         DocumentAccessNotFound,
+        CouldNotAddDocumentAccess,
         DocumentNotFound,
+        DocumentCouldNotBeAdded,
         Unauthorized,
         NeedToSpecifyAtLeatOneAccessType,
         ValidationFailed,

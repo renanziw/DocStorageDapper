@@ -146,6 +146,79 @@
         }
       }
     },
+    "C:\\Users\\Renan\\Desktop\\DocStorage\\DocStorage\\DocStorage.Repository\\DocStorage.Repository.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Renan\\Desktop\\DocStorage\\DocStorage\\DocStorage.Repository\\DocStorage.Repository.csproj",
+        "projectName": "DocStorage.Repository",
+        "projectPath": "C:\\Users\\Renan\\Desktop\\DocStorage\\DocStorage\\DocStorage.Repository\\DocStorage.Repository.csproj",
+        "packagesPath": "C:\\Users\\Renan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Renan\\Desktop\\DocStorage\\DocStorage\\DocStorage.Repository\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Renan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 20.1.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\DevExpress 20.1\\Components\\System\\Components\\Packages": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\Renan\\Desktop\\DocStorage\\DocStorage\\DocStorage.Domain\\DocStorage.Domain.csproj": {
+                "projectPath": "C:\\Users\\Renan\\Desktop\\DocStorage\\DocStorage\\DocStorage.Domain\\DocStorage.Domain.csproj"
+              },
+              "C:\\Users\\Renan\\Desktop\\DocStorage\\DocStorage\\DocStorage.Model\\DocStorage.Model.csproj": {
+                "projectPath": "C:\\Users\\Renan\\Desktop\\DocStorage\\DocStorage\\DocStorage.Model\\DocStorage.Model.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.0.123, )"
+            },
+            "Npgsql": {
+              "target": "Package",
+              "version": "[6.0.7, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.305\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "C:\\Users\\Renan\\Desktop\\DocStorage\\DocStorage\\DocStorage.Service\\DocStorage.Service.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -177,6 +250,9 @@
               },
               "C:\\Users\\Renan\\Desktop\\DocStorage\\DocStorage\\DocStorage.Model\\DocStorage.Model.csproj": {
                 "projectPath": "C:\\Users\\Renan\\Desktop\\DocStorage\\DocStorage\\DocStorage.Model\\DocStorage.Model.csproj"
+              },
+              "C:\\Users\\Renan\\Desktop\\DocStorage\\DocStorage\\DocStorage.Repository\\DocStorage.Repository.csproj": {
+                "projectPath": "C:\\Users\\Renan\\Desktop\\DocStorage\\DocStorage\\DocStorage.Repository\\DocStorage.Repository.csproj"
               },
               "C:\\Users\\Renan\\Desktop\\DocStorage\\DocStorage\\DocStorage.Util\\DocStorage.Util.csproj": {
                 "projectPath": "C:\\Users\\Renan\\Desktop\\DocStorage\\DocStorage\\DocStorage.Util\\DocStorage.Util.csproj"
@@ -317,6 +393,9 @@
               "C:\\Users\\Renan\\Desktop\\DocStorage\\DocStorage\\DocStorage.Domain\\DocStorage.Domain.csproj": {
                 "projectPath": "C:\\Users\\Renan\\Desktop\\DocStorage\\DocStorage\\DocStorage.Domain\\DocStorage.Domain.csproj"
               },
+              "C:\\Users\\Renan\\Desktop\\DocStorage\\DocStorage\\DocStorage.Repository\\DocStorage.Repository.csproj": {
+                "projectPath": "C:\\Users\\Renan\\Desktop\\DocStorage\\DocStorage\\DocStorage.Repository\\DocStorage.Repository.csproj"
+              },
               "C:\\Users\\Renan\\Desktop\\DocStorage\\DocStorage\\DocStorage.Service\\DocStorage.Service.csproj": {
                 "projectPath": "C:\\Users\\Renan\\Desktop\\DocStorage\\DocStorage\\DocStorage.Service\\DocStorage.Service.csproj"
               }
@@ -342,22 +421,6 @@
               "version": "[12.0.0, )"
             },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
-              "target": "Package",
-              "version": "[6.0.10, )"
-            },
-            "Microsoft.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[6.0.10, )"
-            },
-            "Microsoft.EntityFrameworkCore.Design": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[6.0.10, )"
-            },
-            "Microsoft.EntityFrameworkCore.Tools": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
               "target": "Package",
               "version": "[6.0.10, )"
             },

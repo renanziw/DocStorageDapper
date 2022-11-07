@@ -1,10 +1,6 @@
-﻿using BCryptNet = BCrypt.Net.BCrypt;
-using DocStorage.Api.Configuration;
-using DocStorage.Domain;
+﻿using DocStorage.Api.Configuration;
 using DocStorage.Util;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using System.Text.Json.Serialization;
@@ -26,7 +22,6 @@ namespace DocStorage.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddPostgres(Configuration);
             services.Configure<TokenAuthOption>(options =>
             {
                 options.SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(Encoding.ASCII.GetBytes(Configuration["Security:secret_key"])), SecurityAlgorithms.HmacSha256Signature);

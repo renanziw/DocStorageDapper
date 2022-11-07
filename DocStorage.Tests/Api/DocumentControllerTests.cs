@@ -53,16 +53,7 @@ namespace DocStorage.Tests.Api
         [Fact]
         internal async Task ShouldDownloadDocumentAsRegular()
         {
-            var documentAccess = new DocumentAccessCreateModel
-            {
-                DocumentId = 2,
-                UserId = 3
-            };
-
-            //add user access to document
-            var content = new StringContent(JsonSerializer.Serialize(documentAccess), Encoding.UTF8, "application/json");
-            var accessResponse = await Helpers.TestContext.AdminAuthenticatedClient.PostAsync("DocumentAccess", content);
-            var getResponse = await Helpers.TestContext.RegularAuthenticatedClient.GetAsync("Document/2");
+            var getResponse = await Helpers.TestContext.RegularAuthenticatedClient.GetAsync("Document/3");
 
             Assert.Equal(HttpStatusCode.OK, getResponse.StatusCode);
         }

@@ -1,15 +1,8 @@
 ﻿using AutoMapper;
 using DocStorage.Api;
 using DocStorage.Api.Configuration;
-using DocStorage.Domain;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.TestHost;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DocStorage.Tests.Helpers
 {
@@ -26,13 +19,6 @@ namespace DocStorage.Tests.Helpers
                 .CreateClient();
             }
         } 
-
-        public static DataContext CreateDatabase()
-        {
-            var context = new DataContext(new DbContextOptionsBuilder<DbContext>().Options);
-
-            return context.CreateDatabase();
-        }
 
         public static HttpClient AdminAuthenticatedClient
         {

@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using DocStorage.Domain;
 using DocStorage.Model;
+using DocStorage.Repository.Contracts;
 using DocStorage.Service.Extensions;
 using DocStorage.Service.Interfaces;
 using DocStorage.Util;
@@ -10,24 +11,26 @@ namespace DocStorage.Service.Services
 {
     public class GroupService : IGroupService
     {
-        private readonly DataContext _context;
         private readonly IMapper _mapper;
+        private readonly IGroupRepository _repo;
 
-        public GroupService(DataContext context, IMapper mapper)
+        public GroupService(IMapper mapper, IGroupRepository repo)
         {
-            _context = context;
             _mapper = mapper;
+            _repo = repo;
         }
 
         public ServiceResponse<IEnumerable<Model.Group>> GetAll()
         {
-            return _context.Groups.Select(_mapper.Map<Model.Group>).ToList();
+            var groups = _repo.GetAll();
+
+            return groups.Select(_mapper.Map<Model.Group>).ToList();
         }
 
         public ServiceResponse<Model.Group> Get(int id)
         {
             var response = new ServiceResponse<Model.Group>();
-            var currentGroup = _context.Groups.Where(p => p.GroupId == id).FirstOrDefault();
+            var currentGroup = _repo.Get(id); ;
 
             if (currentGroup == null)
             {
@@ -42,17 +45,14 @@ namespace DocStorage.Service.Services
         public ServiceResponse Delete(int id)
         {
             var response = new ServiceResponse();
-            var currentGroup = _context.Groups.Where(p => p.GroupId == id).FirstOrDefault();
+            var isDeleted = _repo.Delete(id);
 
-            if (currentGroup == null)
+            if (!isDeleted)
             {
                 response.Errors.Add(new ServiceError(ErrorTypes.GroupNotFound));
 
                 return response;
             }
-            
-            _context.Groups.Remove(currentGroup);
-            _context.SaveChanges();
 
             return response;
         }
@@ -62,13 +62,14 @@ namespace DocStorage.Service.Services
             group.ArgsNotNull(nameof(group));
 
             var result = new ServiceResponse();
-            var entity = _mapper.Map<Domain.Group>(group);
+            var isAdded = _repo.Add(group);
 
-            result.AddObjectValidation(entity);
-            if (!result.Success) return result;
+            if (!isAdded)
+            {
+                result.Errors.Add(new ServiceError(ErrorTypes.CouldNotAddGroup));
 
-            _context.Groups.Add(entity);
-            _context.SaveChanges();
+                return result;
+            }
 
             return result;
         }

@@ -17,3 +17,5 @@ C:\Users\Renan\Desktop\DocStorage\DocStorage\DocStorage.Service\bin\Debug\net6.0
 C:\Users\Renan\Desktop\DocStorage\DocStorage\DocStorage.Service\bin\Debug\net6.0\DocStorage.Model.pdb
 C:\Users\Renan\Desktop\DocStorage\DocStorage\DocStorage.Service\bin\Debug\net6.0\DocStorage.Util.pdb
 C:\Users\Renan\Desktop\DocStorage\DocStorage\DocStorage.Service\obj\Debug\net6.0\DocStorage.Service.csproj.CopyComplete
+C:\Users\Renan\Desktop\DocStorage\DocStorage\DocStorage.Service\bin\Debug\net6.0\DocStorage.Repository.dll
+C:\Users\Renan\Desktop\DocStorage\DocStorage\DocStorage.Service\bin\Debug\net6.0\DocStorage.Repository.pdb

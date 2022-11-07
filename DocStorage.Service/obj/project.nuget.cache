@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "XlFFY4ts6LGgj0UByDJn3t7Cf3u508REgMLsMH0Y0IE11sNcHY91n1PbRKTMvZUfz1DxTqJlN6ejZYgqc2Q6fw==",
+  "dgSpecHash": "HJ4NjihRqAjfk+2hW6PvtKLDKHkGsfRn3V6HGBuVUEUFsXN55uiV/qdUDtRofKfaOanWmHIGryUjQjnoCYLpkQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Renan\\Desktop\\DocStorage\\DocStorage\\DocStorage.Service\\DocStorage.Service.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Renan\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
     "C:\\Users\\Renan\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
+    "C:\\Users\\Renan\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
     "C:\\Users\\Renan\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.10\\microsoft.aspnetcore.cryptography.internal.6.0.10.nupkg.sha512",
     "C:\\Users\\Renan\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\6.0.10\\microsoft.aspnetcore.cryptography.keyderivation.6.0.10.nupkg.sha512",
     "C:\\Users\\Renan\\.nuget\\packages\\microsoft.aspnetcore.identity.entityframeworkcore\\6.0.10\\microsoft.aspnetcore.identity.entityframeworkcore.6.0.10.nupkg.sha512",
@@ -29,6 +30,7 @@
     "C:\\Users\\Renan\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\6.10.0\\microsoft.identitymodel.jsonwebtokens.6.10.0.nupkg.sha512",
     "C:\\Users\\Renan\\.nuget\\packages\\microsoft.identitymodel.logging\\6.24.0\\microsoft.identitymodel.logging.6.24.0.nupkg.sha512",
     "C:\\Users\\Renan\\.nuget\\packages\\microsoft.identitymodel.tokens\\6.24.0\\microsoft.identitymodel.tokens.6.24.0.nupkg.sha512",
+    "C:\\Users\\Renan\\.nuget\\packages\\npgsql\\6.0.7\\npgsql.6.0.7.nupkg.sha512",
     "C:\\Users\\Renan\\.nuget\\packages\\system.collections.immutable\\6.0.0\\system.collections.immutable.6.0.0.nupkg.sha512",
     "C:\\Users\\Renan\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.0\\system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",
     "C:\\Users\\Renan\\.nuget\\packages\\system.identitymodel.tokens.jwt\\6.10.0\\system.identitymodel.tokens.jwt.6.10.0.nupkg.sha512",

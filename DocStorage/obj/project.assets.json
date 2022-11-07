@@ -36,13 +36,13 @@
           "lib/net6.0/BCrypt.Net-Next.dll": {}
         }
       },
-      "Humanizer.Core/2.8.26": {
+      "Dapper/2.0.123": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.0/_._": {}
+          "lib/net5.0/Dapper.dll": {}
         },
         "runtime": {
-          "lib/netstandard2.0/Humanizer.dll": {}
+          "lib/net5.0/Dapper.dll": {}
         }
       },
       "Microsoft.AspNetCore.Authentication.JwtBearer/6.0.10": {
@@ -142,22 +142,6 @@
           "lib/netstandard2.0/_._": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Design/6.0.10": {
-        "type": "package",
-        "dependencies": {
-          "Humanizer.Core": "2.8.26",
-          "Microsoft.EntityFrameworkCore.Relational": "6.0.10"
-        },
-        "compile": {
-          "lib/net6.0/_._": {}
-        },
-        "runtime": {
-          "lib/net6.0/Microsoft.EntityFrameworkCore.Design.dll": {}
-        },
-        "build": {
-          "build/net6.0/Microsoft.EntityFrameworkCore.Design.props": {}
-        }
-      },
       "Microsoft.EntityFrameworkCore.Relational/6.0.10": {
         "type": "package",
         "dependencies": {
@@ -169,18 +153,6 @@
         },
         "runtime": {
           "lib/net6.0/Microsoft.EntityFrameworkCore.Relational.dll": {}
-        }
-      },
-      "Microsoft.EntityFrameworkCore.Tools/6.0.10": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.EntityFrameworkCore.Design": "6.0.10"
-        },
-        "compile": {
-          "lib/net6.0/_._": {}
-        },
-        "runtime": {
-          "lib/net6.0/_._": {}
         }
       },
       "Microsoft.Extensions.ApiDescription.Server/6.0.5": {
@@ -658,6 +630,22 @@
           "bin/placeholder/DocStorage.Model.dll": {}
         }
       },
+      "DocStorage.Repository/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Dapper": "2.0.123",
+          "DocStorage.Domain": "1.0.0",
+          "DocStorage.Model": "1.0.0",
+          "Npgsql": "6.0.7"
+        },
+        "compile": {
+          "bin/placeholder/DocStorage.Repository.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DocStorage.Repository.dll": {}
+        }
+      },
       "DocStorage.Service/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -666,6 +654,7 @@
           "BCrypt.Net-Next": "4.0.3",
           "DocStorage.Domain": "1.0.0",
           "DocStorage.Model": "1.0.0",
+          "DocStorage.Repository": "1.0.0",
           "DocStorage.Util": "1.0.0",
           "System.IdentityModel.Tokens.Jwt": "6.10.0"
         },
@@ -752,20 +741,22 @@
         "readme.md"
       ]
     },
-    "Humanizer.Core/2.8.26": {
-      "sha512": "OiKusGL20vby4uDEswj2IgkdchC1yQ6rwbIkZDVBPIR6al2b7n3pC91elBul9q33KaBgRKhbZH3+2Ur4fnWx2A==",
+    "Dapper/2.0.123": {
+      "sha512": "RDFF4rBLLmbpi6pwkY7q/M6UXHRJEOerplDGE5jwEkP/JGJnBauAClYavNKJPW1yOTWRPIyfj4is3EaJxQXILQ==",
       "type": "package",
-      "path": "humanizer.core/2.8.26",
+      "path": "dapper/2.0.123",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "humanizer.core.2.8.26.nupkg.sha512",
-        "humanizer.core.nuspec",
-        "lib/netstandard1.0/Humanizer.dll",
-        "lib/netstandard1.0/Humanizer.xml",
-        "lib/netstandard2.0/Humanizer.dll",
-        "lib/netstandard2.0/Humanizer.xml",
-        "logo.png"
+        "Dapper.png",
+        "dapper.2.0.123.nupkg.sha512",
+        "dapper.nuspec",
+        "lib/net461/Dapper.dll",
+        "lib/net461/Dapper.xml",
+        "lib/net5.0/Dapper.dll",
+        "lib/net5.0/Dapper.xml",
+        "lib/netstandard2.0/Dapper.dll",
+        "lib/netstandard2.0/Dapper.xml"
       ]
     },
     "Microsoft.AspNetCore.Authentication.JwtBearer/6.0.10": {
@@ -948,21 +939,6 @@
         "microsoft.entityframeworkcore.analyzers.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.Design/6.0.10": {
-      "sha512": "SVqDfUftgBoKCMPfTaWXiKBZPHMjbiBJLE5WE7MeD28nTk7CkmUNX8eXyNIeWxpDuk4r0zZ6XG9zyG7Ef3KS4A==",
-      "type": "package",
-      "path": "microsoft.entityframeworkcore.design/6.0.10",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "build/net6.0/Microsoft.EntityFrameworkCore.Design.props",
-        "lib/net6.0/Microsoft.EntityFrameworkCore.Design.dll",
-        "lib/net6.0/Microsoft.EntityFrameworkCore.Design.xml",
-        "microsoft.entityframeworkcore.design.6.0.10.nupkg.sha512",
-        "microsoft.entityframeworkcore.design.nuspec"
-      ]
-    },
     "Microsoft.EntityFrameworkCore.Relational/6.0.10": {
       "sha512": "8rjVzKtGSTojSefghXqh3Y2wq8A7P7iWuUQQyQieXNYrYA7nw2aHZI2rjU+7ta4jHgKITddUHFaPQJ69H18dQA==",
       "type": "package",
@@ -975,31 +951,6 @@
         "lib/net6.0/Microsoft.EntityFrameworkCore.Relational.xml",
         "microsoft.entityframeworkcore.relational.6.0.10.nupkg.sha512",
         "microsoft.entityframeworkcore.relational.nuspec"
-      ]
-    },
-    "Microsoft.EntityFrameworkCore.Tools/6.0.10": {
-      "sha512": "LWQvCb3lmTxkcnzO8H0ib0Ot/Pow9Kubt2iqvhhAHEbhs7SS1ygB938EpmuD9o1yyyliAg6FHln5o6jVfEkdyQ==",
-      "type": "package",
-      "path": "microsoft.entityframeworkcore.tools/6.0.10",
-      "hasTools": true,
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "lib/net6.0/_._",
-        "microsoft.entityframeworkcore.tools.6.0.10.nupkg.sha512",
-        "microsoft.entityframeworkcore.tools.nuspec",
-        "tools/EntityFrameworkCore.PS2.psd1",
-        "tools/EntityFrameworkCore.PS2.psm1",
-        "tools/EntityFrameworkCore.psd1",
-        "tools/EntityFrameworkCore.psm1",
-        "tools/about_EntityFrameworkCore.help.txt",
-        "tools/init.ps1",
-        "tools/net461/any/ef.exe",
-        "tools/net461/win-arm64/ef.exe",
-        "tools/net461/win-x86/ef.exe",
-        "tools/netcoreapp2.0/any/ef.dll",
-        "tools/netcoreapp2.0/any/ef.runtimeconfig.json"
       ]
     },
     "Microsoft.Extensions.ApiDescription.Server/6.0.5": {
@@ -2150,6 +2101,11 @@
       "path": "../DocStorage.Model/DocStorage.Model.csproj",
       "msbuildProject": "../DocStorage.Model/DocStorage.Model.csproj"
     },
+    "DocStorage.Repository/1.0.0": {
+      "type": "project",
+      "path": "../DocStorage.Repository/DocStorage.Repository.csproj",
+      "msbuildProject": "../DocStorage.Repository/DocStorage.Repository.csproj"
+    },
     "DocStorage.Service/1.0.0": {
       "type": "project",
       "path": "../DocStorage.Service/DocStorage.Service.csproj",
@@ -2166,11 +2122,9 @@
       "AutoMapper >= 12.0.0",
       "AutoMapper.Extensions.Microsoft.DependencyInjection >= 12.0.0",
       "DocStorage.Domain >= 1.0.0",
+      "DocStorage.Repository >= 1.0.0",
       "DocStorage.Service >= 1.0.0",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 6.0.10",
-      "Microsoft.EntityFrameworkCore >= 6.0.10",
-      "Microsoft.EntityFrameworkCore.Design >= 6.0.10",
-      "Microsoft.EntityFrameworkCore.Tools >= 6.0.10",
       "Microsoft.IdentityModel.Tokens >= 6.25.0",
       "Npgsql.EntityFrameworkCore.PostgreSQL >= 6.0.7",
       "NuGet.CommandLine >= 6.3.1",
@@ -2210,6 +2164,9 @@
             "C:\\Users\\Renan\\Desktop\\DocStorage\\DocStorage\\DocStorage.Domain\\DocStorage.Domain.csproj": {
               "projectPath": "C:\\Users\\Renan\\Desktop\\DocStorage\\DocStorage\\DocStorage.Domain\\DocStorage.Domain.csproj"
             },
+            "C:\\Users\\Renan\\Desktop\\DocStorage\\DocStorage\\DocStorage.Repository\\DocStorage.Repository.csproj": {
+              "projectPath": "C:\\Users\\Renan\\Desktop\\DocStorage\\DocStorage\\DocStorage.Repository\\DocStorage.Repository.csproj"
+            },
             "C:\\Users\\Renan\\Desktop\\DocStorage\\DocStorage\\DocStorage.Service\\DocStorage.Service.csproj": {
               "projectPath": "C:\\Users\\Renan\\Desktop\\DocStorage\\DocStorage\\DocStorage.Service\\DocStorage.Service.csproj"
             }
@@ -2235,22 +2192,6 @@
             "version": "[12.0.0, )"
           },
           "Microsoft.AspNetCore.Authentication.JwtBearer": {
-            "target": "Package",
-            "version": "[6.0.10, )"
-          },
-          "Microsoft.EntityFrameworkCore": {
-            "target": "Package",
-            "version": "[6.0.10, )"
-          },
-          "Microsoft.EntityFrameworkCore.Design": {
-            "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-            "suppressParent": "All",
-            "target": "Package",
-            "version": "[6.0.10, )"
-          },
-          "Microsoft.EntityFrameworkCore.Tools": {
-            "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-            "suppressParent": "All",
             "target": "Package",
             "version": "[6.0.10, )"
           },

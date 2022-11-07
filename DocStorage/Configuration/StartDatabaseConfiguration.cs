@@ -1,6 +1,4 @@
-﻿using DocStorage.Domain;
-using Microsoft.EntityFrameworkCore;
-using DocStorage.Util;
+﻿using DocStorage.Repository.Contracts;
 
 namespace DocStorage.Api.Configuration
 {
@@ -10,8 +8,8 @@ namespace DocStorage.Api.Configuration
         {
             using (var serviceScope = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope())
             {
-                var context = serviceScope.ServiceProvider.GetService<DataContext>();
-                context.CreateDatabase();
+                var context = serviceScope.ServiceProvider.GetService<IConnectionFactory>();
+                context.CreateInitialDatabase();
             }
 
             return app;

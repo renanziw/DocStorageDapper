@@ -53,6 +53,14 @@
         }
       },
       "coverlet.collector/3.1.2": {},
+      "Dapper/2.0.123": {
+        "runtime": {
+          "lib/net5.0/Dapper.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.123.33578"
+          }
+        }
+      },
       "Microsoft.AspNetCore.Authentication.JwtBearer/6.0.10": {
         "dependencies": {
           "Microsoft.IdentityModel.Protocols.OpenIdConnect": "6.10.0"
@@ -1465,9 +1473,9 @@
           "AutoMapper": "12.0.0",
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "12.0.0",
           "DocStorage.Domain": "1.0.0",
+          "DocStorage.Repository": "1.0.0",
           "DocStorage.Service": "1.0.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "6.0.10",
-          "Microsoft.EntityFrameworkCore": "6.0.10",
           "Microsoft.IdentityModel.Tokens": "6.25.0",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "6.0.7",
           "Swashbuckle.AspNetCore": "6.4.0",
@@ -1496,12 +1504,24 @@
           "DocStorage.Model.dll": {}
         }
       },
+      "DocStorage.Repository/1.0.0": {
+        "dependencies": {
+          "Dapper": "2.0.123",
+          "DocStorage.Domain": "1.0.0",
+          "DocStorage.Model": "1.0.0",
+          "Npgsql": "6.0.7"
+        },
+        "runtime": {
+          "DocStorage.Repository.dll": {}
+        }
+      },
       "DocStorage.Service/1.0.0": {
         "dependencies": {
           "AutoMapper": "12.0.0",
           "BCrypt.Net-Next": "4.0.3",
           "DocStorage.Domain": "1.0.0",
           "DocStorage.Model": "1.0.0",
+          "DocStorage.Repository": "1.0.0",
           "DocStorage.Util": "1.0.0",
           "System.IdentityModel.Tokens.Jwt": "6.25.0"
         },
@@ -1552,6 +1572,13 @@
       "sha512": "sha512-wuLDIDKD5XMt0A7lE31JPenT7QQwZPFkP5rRpdJeblyXZ9MGLI8rYjvm5fvAKln+2/X+4IxxQDxBtwdrqKNLZw==",
       "path": "coverlet.collector/3.1.2",
       "hashPath": "coverlet.collector.3.1.2.nupkg.sha512"
+    },
+    "Dapper/2.0.123": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-RDFF4rBLLmbpi6pwkY7q/M6UXHRJEOerplDGE5jwEkP/JGJnBauAClYavNKJPW1yOTWRPIyfj4is3EaJxQXILQ==",
+      "path": "dapper/2.0.123",
+      "hashPath": "dapper.2.0.123.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Authentication.JwtBearer/6.0.10": {
       "type": "package",
@@ -2495,6 +2522,11 @@
       "sha512": ""
     },
     "DocStorage.Model/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DocStorage.Repository/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

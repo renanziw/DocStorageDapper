@@ -146,3 +146,6 @@ C:\Users\Renan\Desktop\DocStorage\DocStorage\DocStorage.Tests\bin\Debug\net6.0\x
 C:\Users\Renan\Desktop\DocStorage\DocStorage\DocStorage.Tests\bin\Debug\net6.0\xunit.runner.utility.netcoreapp10.dll
 C:\Users\Renan\Desktop\DocStorage\DocStorage\DocStorage.Tests\bin\Debug\net6.0\xunit.assert.dll
 C:\Users\Renan\Desktop\DocStorage\DocStorage\DocStorage.Tests\bin\Debug\net6.0\xunit.execution.dotnet.dll
+C:\Users\Renan\Desktop\DocStorage\DocStorage\DocStorage.Tests\bin\Debug\net6.0\Dapper.dll
+C:\Users\Renan\Desktop\DocStorage\DocStorage\DocStorage.Tests\bin\Debug\net6.0\DocStorage.Repository.dll
+C:\Users\Renan\Desktop\DocStorage\DocStorage\DocStorage.Tests\bin\Debug\net6.0\DocStorage.Repository.pdb

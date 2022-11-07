@@ -15,5 +15,3 @@ C:\Users\Renan\Desktop\DocStorage\DocStorage\DocStorage.Domain\obj\Debug\net6.0\
 C:\Users\Renan\Desktop\DocStorage\DocStorage\DocStorage.Domain\bin\Debug\net6.0\DocStorage.Util.dll
 C:\Users\Renan\Desktop\DocStorage\DocStorage\DocStorage.Domain\bin\Debug\net6.0\DocStorage.Util.pdb
 C:\Users\Renan\Desktop\DocStorage\DocStorage\DocStorage.Domain\obj\Debug\net6.0\DocStorage.Domain.csproj.CopyComplete
-C:\Users\Renan\Desktop\DocStorage\DocStorage\DocStorage.Domain\obj\Debug\net6.0\DocStorage.Domain.Resources.resources
-C:\Users\Renan\Desktop\DocStorage\DocStorage\DocStorage.Domain\obj\Debug\net6.0\DocStorage.Domain.csproj.GenerateResource.cache

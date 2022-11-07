@@ -6,31 +6,37 @@ using DocStorage.Service.Extensions;
 using DocStorage.Service.Interfaces;
 using DocStorage.Util;
 using DocStorage.Util.Extensions;
+using DocStorage.Repository.Contracts;
 
 namespace DocStorage.Service.Services
 {
     public class UserService : IUserService
     {
-        private readonly DataContext _context;
         private IJwtUtils _jwtUtils;
         private readonly IMapper _mapper;
+        private readonly IUserRepository _repo;
 
-        public UserService(DataContext context, IJwtUtils jwtUtils, IMapper mapper)
+        public UserService(IJwtUtils jwtUtils, IMapper mapper, IUserRepository repo)
         {
-            _context = context;
             _jwtUtils = jwtUtils;
             _mapper = mapper;
+            _repo = repo;
         }
 
         public ServiceResponse<IEnumerable<Model.User>> GetAll()
         {
-            return _context.Users.Select(_mapper.Map<Model.User>).ToList();
+            var users = _repo.GetAll();
+
+            return users.Select(_mapper.Map<Model.User>).ToList();
         }
 
         public ServiceResponse<Model.User> Get(int id)
         {
+            var adminHash = BCryptNet.HashPassword("admin");
+            var managerHash = BCryptNet.HashPassword("manager");
+            var regularHash = BCryptNet.HashPassword("regular");
             var response = new ServiceResponse<Model.User>();
-            var currentUser = _context.Users.Where(p => p.UserId == id).FirstOrDefault();
+            var currentUser = _repo.Get(id);
 
             if (currentUser == null)
             {
@@ -45,17 +51,14 @@ namespace DocStorage.Service.Services
         public ServiceResponse Delete(int id)
         {
             var response = new ServiceResponse();
-            var currentUser = _context.Users.Where(p => p.UserId == id).FirstOrDefault();
+            var isDeleted = _repo.Delete(id);
 
-            if (currentUser == null)
+            if (isDeleted == false)
             {
                 response.Errors.Add(new ServiceError(ErrorTypes.UserNotFound));
 
                 return response;
             }
-            
-            _context.Users.Remove(currentUser);
-            _context.SaveChanges();
 
             return response;
         }
@@ -65,15 +68,15 @@ namespace DocStorage.Service.Services
             user.ArgsNotNull(nameof(user));
 
             var result = new ServiceResponse();
-            var entity = _mapper.Map<Domain.User>(user);
+            var hash = BCryptNet.HashPassword(user.Password);
+            user.Password = hash;
 
-            result.AddObjectValidation(entity);
-            if (!result.Success) return result;
+            var isAdded = _repo.Add(user);
 
-            entity.PasswordHash = BCryptNet.HashPassword(user.Password);
-
-            _context.Users.Add(entity);
-            _context.SaveChanges();
+            if(isAdded == false)
+            {
+                result.Errors.Add(new ServiceError(ErrorTypes.CouldNotAddUser));
+            }
 
             return result;
         }
@@ -81,7 +84,7 @@ namespace DocStorage.Service.Services
         public ServiceResponse<AuthenticateUserResponse> Authenticate(AuthenticateUserRequest model)
         {
             var response = new ServiceResponse<AuthenticateUserResponse>();
-            var user = _context.Users.FirstOrDefault(x => x.UserName == model.UserName);
+            var user = _repo.GetByUsername(model.UserName);
 
             if (user == null)
             {

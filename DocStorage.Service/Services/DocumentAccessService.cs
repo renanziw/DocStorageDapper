@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using DocStorage.Domain;
+using DocStorage.Repository.Contracts;
 using DocStorage.Service.Extensions;
 using DocStorage.Service.Interfaces;
 using DocStorage.Util;
@@ -10,25 +11,30 @@ namespace DocStorage.Service.Services
 {
     public class DocumentAccessService : IDocumentAccessService
     {
-        private readonly DataContext _context;
         private readonly IMapper _mapper;
+        private readonly IDocumentAccessRepository _repo;
+        private readonly IUserRepository _userRepository;
+        private readonly IGroupRepository _groupRepository;
+        private readonly IDocumentRepository _documentRepository;
 
-        public DocumentAccessService(DataContext context, IMapper mapper)
+        public DocumentAccessService(IMapper mapper, IDocumentAccessRepository repo, IUserRepository userRepository, IGroupRepository groupRepository, IDocumentRepository documentRepository)
         {
-            _context = context;
             _mapper = mapper;
+            _repo = repo;
+            _userRepository = userRepository;
+            _groupRepository = groupRepository;
+            _documentRepository = documentRepository;
         }
 
         public ServiceResponse<IEnumerable<Model.DocumentAccess>> GetAll()
         {
-            return _context.DocumentAccess.Include(p => p.Group).Include(p => p.User)
-                .Select(_mapper.Map<Model.DocumentAccess>).ToList();
+            return _repo.GetAll().Select(_mapper.Map<Model.DocumentAccess>).ToList();
         }
 
         public ServiceResponse<Model.DocumentAccess> Get(int id)
         {
             var response = new ServiceResponse<Model.DocumentAccess>();
-            var documentAccess = _context.DocumentAccess.Where(p => p.DocumentAccessId == id).FirstOrDefault();
+            var documentAccess = _repo.Get(id);
 
             if (documentAccess == null)
             {
@@ -43,17 +49,14 @@ namespace DocStorage.Service.Services
         public ServiceResponse Delete(int id)
         {
             var response = new ServiceResponse();
-            var documentAccess = _context.DocumentAccess.Where(p => p.DocumentAccessId == id).FirstOrDefault();
+            var isDeleted = _repo.Delete(id);
 
-            if (documentAccess == null)
+            if (!isDeleted)
             {
                 response.Errors.Add(new ServiceError(ErrorTypes.DocumentAccessNotFound));
 
                 return response;
             }
-            
-            _context.DocumentAccess.Remove(documentAccess);
-            _context.SaveChanges();
 
             return response;
         }
@@ -63,9 +66,9 @@ namespace DocStorage.Service.Services
             documentAccess.ArgsNotNull(nameof(documentAccess));
 
             var result = new ServiceResponse();
-            var user = _context.Users.FirstOrDefault(p => p.UserId == documentAccess.UserId);
-            var group = _context.Groups.FirstOrDefault(p => p.GroupId == documentAccess.GroupId);
-            var document = _context.Documents.FirstOrDefault(p => p.DocumentId == documentAccess.DocumentId);
+            var user = _userRepository.Get(documentAccess.UserId);
+            var group = _groupRepository.Get(documentAccess.GroupId);
+            var document = _documentRepository.Get(documentAccess.DocumentId);
 
             if(document == null)
             {
@@ -79,10 +82,12 @@ namespace DocStorage.Service.Services
 
             if (!result.Success) return result;
 
-            var entity = new DocumentAccess(document, group, user);
+            var isAdded = _repo.Add(documentAccess);
 
-            _context.DocumentAccess.Add(entity);
-            _context.SaveChanges();
+            if (!isAdded)
+            {
+                result.Errors.Add(new ServiceError(ErrorTypes.CouldNotAddDocumentAccess));
+            }
 
             return result;
         }

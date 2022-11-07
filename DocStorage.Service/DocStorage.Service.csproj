@@ -15,6 +15,7 @@
   <ItemGroup>
     <ProjectReference Include="..\DocStorage.Domain\DocStorage.Domain.csproj" />
     <ProjectReference Include="..\DocStorage.Model\DocStorage.Model.csproj" />
+    <ProjectReference Include="..\DocStorage.Repository\DocStorage.Repository.csproj" />
     <ProjectReference Include="..\DocStorage.Util\DocStorage.Util.csproj" />
   </ItemGroup>
 

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "OXOgjil6nvuh0QmSftXlnuoSt1odcDxE6GoTSCJdGwZzQz9Y4YxyfpQCkWSAPJFYymxbf9xCL4Mrc4grx81Anw==",
+  "dgSpecHash": "MOX7CrnSEkNI2JFhvJiMCTlE6aOf8aWgzuC1Pbn1MdFUzalNFBOemWwFQFWutPTDnj1OU4fRH333DyaQmfijBQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Renan\\Desktop\\DocStorage\\DocStorage\\DocStorage.Tests\\DocStorage.Tests.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,7 @@
     "C:\\Users\\Renan\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",
     "C:\\Users\\Renan\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\Renan\\.nuget\\packages\\coverlet.collector\\3.1.2\\coverlet.collector.3.1.2.nupkg.sha512",
+    "C:\\Users\\Renan\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
     "C:\\Users\\Renan\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.10\\microsoft.aspnetcore.authentication.jwtbearer.6.0.10.nupkg.sha512",
     "C:\\Users\\Renan\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.10\\microsoft.aspnetcore.cryptography.internal.6.0.10.nupkg.sha512",
     "C:\\Users\\Renan\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\6.0.10\\microsoft.aspnetcore.cryptography.keyderivation.6.0.10.nupkg.sha512",

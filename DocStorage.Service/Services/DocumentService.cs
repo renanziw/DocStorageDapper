@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using DocStorage.Domain;
 using DocStorage.Model;
+using DocStorage.Repository.Contracts;
 using DocStorage.Service.Extensions;
 using DocStorage.Service.Interfaces;
 using DocStorage.Util;
@@ -11,26 +12,31 @@ namespace DocStorage.Service.Services
 {
     public class DocumentService : IDocumentService
     {
-        private readonly DataContext _context;
         private readonly IMapper _mapper;
+        private readonly IDocumentRepository _repo;
+        private readonly IUserGroupRepository _userGroupRepository;
+        private readonly IDocumentAccessRepository _documentAccessRepository;
 
-        public DocumentService(DataContext context, IMapper mapper)
+
+        public DocumentService(IMapper mapper, IDocumentRepository repo, IUserGroupRepository userGroupRepository, IDocumentAccessRepository documentAccessRepository)
         {
-            _context = context;
             _mapper = mapper;
+            _repo = repo;
+            _userGroupRepository = userGroupRepository;
+            _documentAccessRepository = documentAccessRepository;
         }
 
         public ServiceResponse<IEnumerable<Model.Document>> GetAll()
         {
-            return _context.Documents.Select(_mapper.Map<Model.Document>).ToList();
+            return _repo.GetAll().Select(_mapper.Map<Model.Document>).ToList();
         }
 
         public ServiceResponse<Model.Document> Get(int documentId, int currentUserId)
         {
             var response = new ServiceResponse<Model.Document>();
-            var currentDocument = _context.Documents.Where(p => p.DocumentId == documentId).FirstOrDefault();
-            var userGroups = _context.UserGroups.Include(p => p.User).Include(p => p.Group).Where(p => p.User != null && p.User.UserId == currentUserId).ToList();
-            var accessList = _context.DocumentAccess.Include(p => p.User).Include(p => p.Group).Include(p => p.Document).Where(p => p.Document.DocumentId == documentId).ToList();
+            var currentDocument = _repo.Get(documentId);
+            var userGroups = _userGroupRepository.GetAllByUserId(currentUserId).ToList();
+            var accessList = _documentAccessRepository.GetAllByDocumentId(documentId);
 
             if (currentDocument == null)
             {
@@ -50,17 +56,14 @@ namespace DocStorage.Service.Services
         public ServiceResponse Delete(int id)
         {
             var response = new ServiceResponse();
-            var currentDocument = _context.Documents.Where(p => p.DocumentId == id).FirstOrDefault();
+            var isDeleted = _repo.Delete(id);
 
-            if (currentDocument == null)
+            if (!isDeleted)
             {
                 response.Errors.Add(new ServiceError(ErrorTypes.DocumentNotFound));
 
                 return response;
             }
-            
-            _context.Documents.Remove(currentDocument);
-            _context.SaveChanges();
 
             return response;
         }
@@ -70,13 +73,14 @@ namespace DocStorage.Service.Services
             document.ArgsNotNull(nameof(document));
 
             var result = new ServiceResponse();
-            var entity = _mapper.Map<Domain.Document>(document);
+            var isAdded = _repo.Add(document);
 
-            result.AddObjectValidation(entity);
-            if (!result.Success) return result;
+            if (!isAdded)
+            {
+                result.Errors.Add(new ServiceError(ErrorTypes.DocumentCouldNotBeAdded));
 
-            _context.Documents.Add(entity);
-            _context.SaveChanges();
+                return result;
+            }
 
             return result;
         }

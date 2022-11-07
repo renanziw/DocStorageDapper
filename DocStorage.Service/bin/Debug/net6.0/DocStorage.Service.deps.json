@@ -12,6 +12,7 @@
           "BCrypt.Net-Next": "4.0.3",
           "DocStorage.Domain": "1.0.0",
           "DocStorage.Model": "1.0.0",
+          "DocStorage.Repository": "1.0.0",
           "DocStorage.Util": "1.0.0",
           "System.IdentityModel.Tokens.Jwt": "6.10.0"
         },
@@ -35,6 +36,14 @@
           "lib/net6.0/BCrypt.Net-Next.dll": {
             "assemblyVersion": "4.0.3.0",
             "fileVersion": "4.0.3.0"
+          }
+        }
+      },
+      "Dapper/2.0.123": {
+        "runtime": {
+          "lib/net5.0/Dapper.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.123.33578"
           }
         }
       },
@@ -280,6 +289,17 @@
           }
         }
       },
+      "Npgsql/6.0.7": {
+        "dependencies": {
+          "System.Runtime.CompilerServices.Unsafe": "6.0.0"
+        },
+        "runtime": {
+          "lib/net6.0/Npgsql.dll": {
+            "assemblyVersion": "6.0.7.0",
+            "fileVersion": "6.0.7.0"
+          }
+        }
+      },
       "System.Collections.Immutable/6.0.0": {
         "dependencies": {
           "System.Runtime.CompilerServices.Unsafe": "6.0.0"
@@ -323,6 +343,17 @@
           "DocStorage.Model.dll": {}
         }
       },
+      "DocStorage.Repository/1.0.0": {
+        "dependencies": {
+          "Dapper": "2.0.123",
+          "DocStorage.Domain": "1.0.0",
+          "DocStorage.Model": "1.0.0",
+          "Npgsql": "6.0.7"
+        },
+        "runtime": {
+          "DocStorage.Repository.dll": {}
+        }
+      },
       "DocStorage.Util/1.0.0": {
         "dependencies": {
           "Microsoft.IdentityModel.Tokens": "6.24.0"
@@ -352,6 +383,13 @@
       "sha512": "sha512-W+U9WvmZQgi5cX6FS5GDtDoPzUCV4LkBLkywq/kRZhuDwcbavOzcDAr3LXJFqHUi952Yj3LEYoWW0jbEUQChsA==",
       "path": "bcrypt.net-next/4.0.3",
       "hashPath": "bcrypt.net-next.4.0.3.nupkg.sha512"
+    },
+    "Dapper/2.0.123": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-RDFF4rBLLmbpi6pwkY7q/M6UXHRJEOerplDGE5jwEkP/JGJnBauAClYavNKJPW1yOTWRPIyfj4is3EaJxQXILQ==",
+      "path": "dapper/2.0.123",
+      "hashPath": "dapper.2.0.123.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Cryptography.Internal/6.0.10": {
       "type": "package",
@@ -514,6 +552,13 @@
       "path": "microsoft.identitymodel.tokens/6.24.0",
       "hashPath": "microsoft.identitymodel.tokens.6.24.0.nupkg.sha512"
     },
+    "Npgsql/6.0.7": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-HhD5q/VUJY++tCzc0eCrhtsxmUdP7NxNhUMOdYW6sqpC6NRlFLvUDf5JyRj0gOGkXe3Tn49toaisgvLqlzQ2JQ==",
+      "path": "npgsql/6.0.7",
+      "hashPath": "npgsql.6.0.7.nupkg.sha512"
+    },
     "System.Collections.Immutable/6.0.0": {
       "type": "package",
       "serviceable": true,
@@ -555,6 +600,11 @@
       "sha512": ""
     },
     "DocStorage.Model/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DocStorage.Repository/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -42,6 +42,15 @@
           "build/netstandard1.0/coverlet.collector.targets": {}
         }
       },
+      "Dapper/2.0.123": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0/Dapper.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/Dapper.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.Authentication.JwtBearer/6.0.10": {
         "type": "package",
         "dependencies": {
@@ -2239,9 +2248,9 @@
           "AutoMapper": "12.0.0",
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "12.0.0",
           "DocStorage.Domain": "1.0.0",
+          "DocStorage.Repository": "1.0.0",
           "DocStorage.Service": "1.0.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "6.0.10",
-          "Microsoft.EntityFrameworkCore": "6.0.10",
           "Microsoft.IdentityModel.Tokens": "6.25.0",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "6.0.7",
           "Swashbuckle.AspNetCore": "6.4.0",
@@ -2286,6 +2295,22 @@
           "bin/placeholder/DocStorage.Model.dll": {}
         }
       },
+      "DocStorage.Repository/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Dapper": "2.0.123",
+          "DocStorage.Domain": "1.0.0",
+          "DocStorage.Model": "1.0.0",
+          "Npgsql": "6.0.7"
+        },
+        "compile": {
+          "bin/placeholder/DocStorage.Repository.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DocStorage.Repository.dll": {}
+        }
+      },
       "DocStorage.Service/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -2294,6 +2319,7 @@
           "BCrypt.Net-Next": "4.0.3",
           "DocStorage.Domain": "1.0.0",
           "DocStorage.Model": "1.0.0",
+          "DocStorage.Repository": "1.0.0",
           "DocStorage.Util": "1.0.0",
           "System.IdentityModel.Tokens.Jwt": "6.10.0"
         },
@@ -2429,6 +2455,24 @@
         "coverlet-icon.png",
         "coverlet.collector.3.1.2.nupkg.sha512",
         "coverlet.collector.nuspec"
+      ]
+    },
+    "Dapper/2.0.123": {
+      "sha512": "RDFF4rBLLmbpi6pwkY7q/M6UXHRJEOerplDGE5jwEkP/JGJnBauAClYavNKJPW1yOTWRPIyfj4is3EaJxQXILQ==",
+      "type": "package",
+      "path": "dapper/2.0.123",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Dapper.png",
+        "dapper.2.0.123.nupkg.sha512",
+        "dapper.nuspec",
+        "lib/net461/Dapper.dll",
+        "lib/net461/Dapper.xml",
+        "lib/net5.0/Dapper.dll",
+        "lib/net5.0/Dapper.xml",
+        "lib/netstandard2.0/Dapper.dll",
+        "lib/netstandard2.0/Dapper.xml"
       ]
     },
     "Microsoft.AspNetCore.Authentication.JwtBearer/6.0.10": {
@@ -8012,6 +8056,11 @@
       "type": "project",
       "path": "../DocStorage.Model/DocStorage.Model.csproj",
       "msbuildProject": "../DocStorage.Model/DocStorage.Model.csproj"
+    },
+    "DocStorage.Repository/1.0.0": {
+      "type": "project",
+      "path": "../DocStorage.Repository/DocStorage.Repository.csproj",
+      "msbuildProject": "../DocStorage.Repository/DocStorage.Repository.csproj"
     },
     "DocStorage.Service/1.0.0": {
       "type": "project",
